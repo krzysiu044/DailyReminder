@@ -1,0 +1,273 @@
+/* Reset stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Tło strony */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Nagłówek */
+header {
+    background: linear-gradient(135deg, #3a3a3a, #4f4f4f);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ukrywa nadmiarowe elementy */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 80%);
+    opacity: 0.3;
+    transform: rotate(-30deg);
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    z-index: 2; /* Warstwa nad dekoracją */
+    position: relative;
+}
+
+header p {
+    font-size: 1.5em;
+    z-index: 2; /* Warstwa nad dekoracją */
+    position: relative;
+}
+
+/* Efekt parallax dla tła nagłówka */
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/tlonaglowka.jpg'); /* Wstaw tutaj ścieżkę do swojego zdjęcia */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    z-index: 0;
+    transform: scale(1.1);
+}
+
+/* Nawigacja */
+nav ul {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    z-index: 2; /* Warstwa nad dekoracją */
+    position: relative;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background: #ff6347; /* Kolor tła na hover */
+    color: #fff;
+    border-color: #ff6347; /* Kolor obramowania na hover */
+    transform: scale(1.05); /* Efekt powiększenia na hover */
+}
+
+/* Sekcje */
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Usługi */
+.service {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service h3 {
+    margin: 15px 0;
+    color: #333;
+}
+
+.service p {
+    color: #666;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Sekcja Portfolio */
+#portfolio {
+    background: linear-gradient(to right, #e2e2e2, #ffffff); /* Delikatny gradient szaro-biały */
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+#portfolio h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+}
+
+#portfolio p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1.2em;
+}
+
+#portfolio ul {
+    list-style: none;
+    padding: 0;
+}
+
+#portfolio ul li {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#portfolio ul li a {
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: #fff; /* Białe tło dla linków */
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+#portfolio ul li a:hover {
+    background: #ff6347;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(255, 99, 71, 0.2);
+}
+
+#portfolio ul li a:focus {
+    outline: 2px solid #ff6347;
+    outline-offset: 2px;
+}
+
+}
+
+/* Sekcja Kontakt */
+#contact {
+    background: #f9f9f9; /* Jasne, neutralne tło */
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    border: 1px solid #ddd; /* Subtelne obramowanie */
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+#contact p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+form button {
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #e55347;
+}
+
+}
+
+/* Stopka */
+footer {
+    background: #3a3a3a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .service {
+        padding: 15px;
+    }
+}
